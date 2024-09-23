@@ -1,0 +1,44 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: lightgoldenrodyellow;
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+}
+.navbar{
+    background-color: orange;
+    border-bottom: 1px solid #e8e8e8;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+}
+.sidebar{
+    height: 82vh;
+    background-color: orange;
+    width: 204px;
+}
+.menu-list
+{
+    list-style-type: none;
+    margin-top: 40px;
+    height: 100%;
+}
+.menu-list li{
+    padding: 10px;
+    border-bottom: 1px solid #e8e8e8;
+    width: 140px;
+}
+.menu-list a{
+    color: white;
+    text-decoration: none;
+    margin-top: 20px;
+    font-weight: 500;
+}
+.container
+{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    padding: 40px;
+}
