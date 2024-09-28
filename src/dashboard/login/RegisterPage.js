@@ -1,5 +1,6 @@
 import React, { Fragment, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
 
 function RegisterPage() {
     const [userData, setUserData] = useState({
@@ -7,6 +8,7 @@ function RegisterPage() {
         email: "",
         password: "",
     });
+    const appNavigate = useNavigate();
 
     const handleChange = (event) => {
         setUserData({
@@ -16,19 +18,33 @@ function RegisterPage() {
     };
 
     const handleSubmit = () => {
+
         if (!userData.name || !userData.email || !userData.password) {
-            alert("Please fill all the details");
+            // alert("Please fill all the details");
+            toast.error("Please fill all the details");
         } else {
             const emailReGex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailReGex.test(userData.email)) {
-                alert("please provide valid email ID");
+                // alert("please provide valid email ID");
+                toast.error("please provide valid email ID");
             } else {
                 const existingdata = JSON.parse(localStorage.getItem("users")) || [];
-                existingdata.push(userData);
-                localStorage.setItem("users", JSON.stringify(existingdata));
-                alert("registration successful");
+                const existingUser = existingdata.some((user) => user.email === userData.email);
+                if (existingUser) {
+                    // alert("user already ergistered, please login!");
+                    toast.error("user already ergistered, please login!");
+                    // console.log(existingUser);
+                } else {
+                    existingdata.push(userData);
+                    localStorage.setItem("users", JSON.stringify(existingdata));
+                    console.log(existingUser);
+                    // alert("registration successful");
+                    toast.success("registration successful, redirecting to login page!");
+                    setTimeout(() => {
+                        appNavigate("/");
+                    }, 4000);
+                }
             }
-
         }
     };
 
@@ -54,6 +70,7 @@ function RegisterPage() {
                     </div>
                 </div>
             </div>
+            <ToastContainer />
         </Fragment>
     );
 }

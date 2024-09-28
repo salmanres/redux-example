@@ -1,82 +1,95 @@
-body{
+body {
     margin: 0;
     padding: 0;
     background-color: lightgoldenrodyellow;
     font-family: 'Roboto', sans-serif;
     overflow-x: hidden;
 }
-.navbar{
+
+.navbar {
     background-color: orange;
     border-bottom: 1px solid #e8e8e8;
-    height: 60px;
-    display: flex;
-    justify-content: space-between;
+    height: 75px;
 }
-.sidebar{
+
+.sidebar {
     height: 82vh;
     background-color: orange;
     width: 204px;
 }
-.menu-list
-{
+
+.menu-list {
     list-style-type: none;
     margin-top: 40px;
     height: 100%;
 }
-.menu-list li{
+
+.menu-list li {
     padding: 10px;
     border-bottom: 1px solid #e8e8e8;
     width: 140px;
 }
-.menu-list a{
+
+.menu-list a {
     color: white;
     text-decoration: none;
     margin-top: 20px;
     font-weight: 500;
 }
-.container
-{
+
+.container {
     display: flex;
     flex-direction: column;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
     padding: 40px;
 }
-.food-card
-{
+
+.food-card {
     width: 260px;
 }
-.card-img-top
-{
+
+.card-img-top {
     height: 200px !important;
 }
-.strip
-{
+
+.strip {
     background-color: red;
     height: 65px;
     position: fixed;
-    top:0;
+    top: 0;
 }
-.login-form
-{
+
+.login-form {
     border: 1px solid red;
 }
-.card-data{
+
+.card-data {
     width: 250px;
     margin-top: 10px;
 }
-.card-title
-{
+
+.card-title {
     font-size: 20px;
     font-weight: 500;
     text-decoration: none;
     color: black;
 }
-.card2
-{
+
+.card2 {
     width: 400px;
 }
-.moviecard
-{
+
+.moviecard {
     width: 250px;
+}
+
+.banner {
+    background-color: #e8e8e8;
+    border-radius: 5px;
+    width: 90%;
+    height: 90vh;
+    position: fixed;
+    top: 5vh;
+    right: 5%;
 }

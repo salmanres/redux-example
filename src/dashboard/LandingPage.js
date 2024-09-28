@@ -1,9 +1,22 @@
-import React, { Fragment } from 'react'
-import Navbar from './Navigation/Navbar'
-import Sidebar from './Navigation/Sidebar'
-import { Outlet } from 'react-router-dom'
+import React, { Fragment, useEffect, useState } from 'react';
+import Navbar from './Navigation/Navbar';
+import Sidebar from './Navigation/Sidebar';
+import { Outlet } from 'react-router-dom';
 
 function LandingPage() {
+
+    const [showBanner, setShowBanner] = useState(false);
+
+    useEffect(() => {
+        setTimeout(() => {
+            setShowBanner(true);
+        }, 3000)
+    }, []);
+
+    const handleBannerClose = () => {
+        setShowBanner(false);
+    };
+
     return (
         <Fragment>
             <Navbar />
@@ -11,39 +24,21 @@ function LandingPage() {
                 <div className='row'>
                     <div className='col-lg-2 col-md-2 col-sm-2 col-2 sidebar'>
                         <Sidebar />
-
                     </div>
                     <div className='col-lg-10 col-md-10 col-sm-10 col-10'>
-                        <Outlet/>
-
+                        <Outlet />
                     </div>
                 </div>
             </div>
+
+            {showBanner && (
+                <div className='banner'>
+                    <h1>offer here</h1>
+                    <button onClick={handleBannerClose}>X</button>
+                </div>
+            )}
         </Fragment>
-    )
+    );
 }
 
-export default LandingPage
-
-
-
-
-
-
-
-
-// import React, { Fragment } from 'react'
-// import Sidebar from './Navigation/Sidebar'
-// import { Outlet } from 'react-router-dom'
-// import Navbar from './Navigation/Navbar'
-
-// function LandingPage() {
-//     return (
-//         <Fragment>
-//             <Navbar/>
-//
-//         </Fragment>
-//     )
-// }
-
-// export default LandingPage
+export default LandingPage;

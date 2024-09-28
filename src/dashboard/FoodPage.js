@@ -17,7 +17,7 @@ function FoodPage() {
                         {FoodData.map((item) => (
                             <div className="card card-data">
                                 <img src={item.imgdata} className="card-img-top" alt="..." />
-                                <div className="card-bo`dy">
+                                <div className="card-body">
                                     <Link to={`/home/fooddetails/${item.id}`} className="card-title">{item.rname}</Link>
                                     <p className="card-text"><b>Price: </b>{item.price}/-</p>
                                     <button className='btn btn-warning'>ADD TO CART</button>

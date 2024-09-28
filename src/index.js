@@ -20,6 +20,7 @@ import FoodPage from './dashboard/FoodPage';
 import FoodDetails from './dashboard/FoodDetails';
 import MovieData from './dashboard/MovieData';
 import MovieDetails from './dashboard/MovieDetails';
+import 'react-toastify/dist/ReactToastify.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -33,9 +34,9 @@ root.render(
           <Route path='*' element={<ErrorPage />} />
           <Route path='home' element={<LandingPage />} >
             <Route path='foodpage' element={<FoodPage />} />
-            <Route path='fooddetails/:id' element={<FoodDetails/>} />
-            <Route path='moviedata' element={<MovieData/>} />
-            <Route path='moviedetails/:id' element={<MovieDetails/>} />
+            <Route path='fooddetails/:id' element={<FoodDetails />} />
+            <Route path='moviedata' element={<MovieData />} />
+            <Route path='moviedetails/:id' element={<MovieDetails />} />
           </Route>
           {/* <Route path='/' element={<LandingPage />}>
             <Route path='' element={<Component1 />} />
