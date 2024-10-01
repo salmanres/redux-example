@@ -9,7 +9,7 @@ function LandingPage() {
 
     useEffect(() => {
         setTimeout(() => {
-            setShowBanner(true);
+            setShowBanner(false);
         }, 3000)
     }, []);
 

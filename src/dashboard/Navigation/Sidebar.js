@@ -12,6 +12,7 @@ function Sidebar() {
             <li><Link to="component5">COMPONENT 5</Link></li>
             <li><Link to="foodpage">FOOD PAGE</Link></li>
             <li><Link to="moviedata">MOVIE DATA</Link></li>
+            <li><Link to="reacthookform">REACT HOOK FORM</Link></li>
         </ul>
     </div>
   )

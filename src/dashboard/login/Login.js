@@ -19,18 +19,15 @@ function Login() {
     };
 
     const handleLogin = () => {
-        if (!userData.email || !userData.password) {
-            alert("please fill all details!");
+
+        const existingdata = JSON.parse(localStorage.getItem("users"));
+        console.log(existingdata);
+        const d = existingdata.find((e) => e.email === userData.email && e.password === userData.password);
+        if (d) {
+            alert("login successful");
+            appNavigation("home");
         } else {
-            const existingdata = JSON.parse(localStorage.getItem("users"));
-            console.log(existingdata);
-            const d = existingdata.find((e) => e.email === userData.email && e.password === userData.password);
-            if (d) {
-                alert("login successful");
-                appNavigation("home");
-            } else {
-                alert("invalid email/password");
-            }
+            alert("invalid email/password");
         }
     }
 
@@ -51,7 +48,6 @@ function Login() {
                         <label className='form-label'>Email</label>
                         <input type="email" className='form-control mb-2' name='email' onChange={handleChange} />
                         <label className='form-label'>Password</label>
-                        <input type="password" className='form-control mb-2' name='password' onChange={handleChange} />
                         <button className='btn btn-warning w-100 mt-2 p-2' onClick={handleLogin} >LOGIN HERE</button>
                         <label className='text-end mt-2'>Forgot Password?</label>
                         <Link to="/register" className='w-100 mt-3 p-2 mb-3'>SIGN UP HERE</Link>
