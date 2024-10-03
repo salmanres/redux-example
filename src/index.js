@@ -22,6 +22,7 @@ import MovieData from './dashboard/MovieData';
 import MovieDetails from './dashboard/MovieDetails';
 import 'react-toastify/dist/ReactToastify.css';
 import ReactHookForm from './dashboard/login/ReactHookForm';
+import Checkout from './dashboard/Checkout';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -39,6 +40,7 @@ root.render(
             <Route path='moviedata' element={<MovieData />} />
             <Route path='moviedetails/:id' element={<MovieDetails />} />
             <Route path='reacthookform' element={<ReactHookForm />} />
+            <Route path='checkout' element={<Checkout/>} />
           </Route>
           {/* <Route path='/' element={<LandingPage />}>
             <Route path='' element={<Component1 />} />

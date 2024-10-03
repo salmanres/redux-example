@@ -1,8 +1,17 @@
 import React, { Fragment } from 'react';
 import FoodData from './Shared/FoodData';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { addFoodItem } from './redux/MyCartSlice';
 
 function FoodPage() {
+
+    const dispatch = useDispatch();
+
+    const handleAddToCart = (item) => {
+        dispatch(addFoodItem(item));
+    }
+
     return (
         <Fragment>
             <div className='container-fluid'>
@@ -20,7 +29,7 @@ function FoodPage() {
                                 <div className="card-body">
                                     <Link to={`/home/fooddetails/${item.id}`} className="card-title">{item.rname}</Link>
                                     <p className="card-text"><b>Price: </b>{item.price}/-</p>
-                                    <button className='btn btn-warning'>ADD TO CART</button>
+                                    <button className='btn btn-warning' onClick={() => handleAddToCart(item)}>ADD TO CART</button>
                                 </div>
                             </div>
                         ))}

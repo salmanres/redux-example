@@ -51,6 +51,8 @@ function Login() {
                         <button className='btn btn-warning w-100 mt-2 p-2' onClick={handleLogin} >LOGIN HERE</button>
                         <label className='text-end mt-2'>Forgot Password?</label>
                         <Link to="/register" className='w-100 mt-3 p-2 mb-3'>SIGN UP HERE</Link>
+                        <Link to="/home" className='w-100 mt-3 p-2 mb-3'>dashboard</Link>
+
                     </div>
                 </div>
             </div>

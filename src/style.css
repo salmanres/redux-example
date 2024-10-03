@@ -93,3 +93,13 @@ body {
     top: 5vh;
     right: 5%;
 }
+
+.card-cart {
+    height: 150px !important;
+    width: 400px;
+}
+
+.cart-img {
+    height: 100%;
+    width: 100px;
+}
